@@ -1,5 +1,6 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import  "../scss/adminProducts.scss"
+import Sidebar from './Sidebar';
 export default function ProductsAdmin() {
         const products = [
           { id: '39842-231', name: 'Macbook Pro 15"', status: 'Available', category: 'Laptops', price: '$ 2,999.00', date: '20 Jan, 2022' },
@@ -8,11 +9,23 @@ export default function ProductsAdmin() {
           { id: '39842-231', name: 'iPhone 14', status: 'Preorder', category: 'Phones', price: '$ 2,999.00', date: '22 Feb, 2022' },
           { id: '39842-231', name: 'AirPods 2', status: 'Available', category: 'Electronics', price: '$ 2,999.00', date: '22 Feb, 2022' }
         ];
+        const [sidebarOpen, setSidebarOpen] = useState(false);
+
+        const toggleSidebar = () => {
+          setSidebarOpen(!sidebarOpen);
+        };
+  //       const history = unstable_HistoryRouter();
+
+  // const handleAddProduct = () => {
+  //   history.push('/add-product');
+  // };
   return (
+  <div className='container'>
+      <Sidebar openSidebarToggle={sidebarOpen} OpenSidebar={toggleSidebar} />
     <div className="product-table">
       <div className="header">
         <h1>Products</h1>
-        <button className="add-product">+ Add Product</button>
+        <button className="add-product" >+ Add Product</button>
       </div>
       <div className="product-table-select">sắp xếp theo:
                 <select className="product-table-select-option" name="" id="">
@@ -61,5 +74,6 @@ export default function ProductsAdmin() {
         <button>20</button>
       </div>
     </div>
+  </div>
   )
 }

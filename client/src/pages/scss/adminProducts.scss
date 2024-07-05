@@ -1,12 +1,26 @@
+.container {
+  display: grid;
+  grid-template-columns: 260px 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-areas: 
+    "sidebar header header header"
+    "sidebar main main main";
+  height: 100vh;
+}
 .product-table {
-    margin: 20px;
+    margin: 10px;
+    width: 1300px;
     font-family: Arial, sans-serif;
   
     .header {
       display: flex;
+      width: 176vh;
+      height: 100px;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 10px;
+      
+
   
       h1 {
         margin: 0;

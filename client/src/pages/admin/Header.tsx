@@ -1,9 +1,10 @@
-import React from 'react'
-import { BsFillBellFill, BsFillEnvelopeFill, BsPersonCircle, BsSearch, BsJustify } from 'react-icons/bs'
-import "../scss/adminCustomer.scss"
+import React from 'react';
+import { BsFillBellFill, BsFillEnvelopeFill, BsPersonCircle, BsSearch, BsJustify } from 'react-icons/bs';
+import "../scss/adminCustomer.scss";
+
 type HeaderProps = {
   OpenSidebar: () => void;
-}
+};
 
 export default function Header({ OpenSidebar }: HeaderProps): JSX.Element {
   return (
@@ -20,5 +21,5 @@ export default function Header({ OpenSidebar }: HeaderProps): JSX.Element {
         <BsPersonCircle className='icon' />
       </div>
     </header>
-  )
+  );
 }
