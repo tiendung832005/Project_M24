@@ -1,6 +1,7 @@
 import React from 'react';
 import { BsFillBellFill, BsFillEnvelopeFill, BsPersonCircle, BsSearch, BsJustify } from 'react-icons/bs';
-import "../scss/adminCustomer.scss";
+import "../scss/adminDashboard.scss";
+
 
 type HeaderProps = {
   OpenSidebar: () => void;

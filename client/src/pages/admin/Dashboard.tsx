@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import Header from './Header';
 import Home from './Home';
 import Sidebar from './Sidebar';
-import "../scss/adminCustomer.scss";
-import { Route, Routes } from 'react-router-dom';
-import ProductsAdmin from './ProductsAdmin';
-import AddProducts from './AddProducts';
+import "../scss/adminDashboard.scss";
+
 
 export default function Dashboard(): JSX.Element {
   const [sidebarOpen, setSidebarOpen] = useState(false);

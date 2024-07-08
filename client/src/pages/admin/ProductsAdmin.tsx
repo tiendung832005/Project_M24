@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import  "../scss/adminProducts.scss"
 import Sidebar from './Sidebar';
+import { NavLink } from 'react-router-dom';
 export default function ProductsAdmin() {
         const products = [
           { id: '39842-231', name: 'Macbook Pro 15"', status: 'Available', category: 'Laptops', price: '$ 2,999.00', date: '20 Jan, 2022' },
@@ -25,7 +26,9 @@ export default function ProductsAdmin() {
     <div className="product-table">
       <div className="header">
         <h1>Products</h1>
-        <button className="add-product" >+ Add Product</button>
+        <button className="add-product" >
+          <NavLink className="add-product" to={'/AddProducts'}>+ Add Product</NavLink>
+          </button>
       </div>
       <div className="product-table-select">sắp xếp theo:
                 <select className="product-table-select-option" name="" id="">
@@ -57,7 +60,9 @@ export default function ProductsAdmin() {
               <td>{product.date}</td>
               <td>
                 <button className="view-btn">View</button>
-                <button className="edit-btn">Edit</button>
+                <button className="edit-btn">
+                    <NavLink className="edit-btn" to={'/AddProducts'}>Edit</NavLink>
+                </button>
                 <button className="delete-btn">Delete</button>
               </td>
             </tr>

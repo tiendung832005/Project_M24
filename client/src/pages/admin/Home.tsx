@@ -5,7 +5,8 @@ import
  import 
  { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } 
  from 'recharts';
-import "../scss/adminCustomer.scss"
+ import "../scss/adminDashboard.scss";
+
 
  const data = [
     {

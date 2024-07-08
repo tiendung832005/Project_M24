@@ -2,7 +2,7 @@ import React from 'react';
 import { BsCart3, BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillGearFill } from 'react-icons/bs';
 import { BiSolidLogOut } from 'react-icons/bi';
 import { NavLink, Route, Routes } from 'react-router-dom';
-import "../scss/adminCustomer.scss";
+import "../scss/adminDashboard.scss";
 type SidebarProps = {
   openSidebarToggle: boolean;
   OpenSidebar: () => void;
