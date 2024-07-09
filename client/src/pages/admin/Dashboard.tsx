@@ -13,7 +13,7 @@ export default function Dashboard(): JSX.Element {
   };
 
   return (
-    <div className="grid-container">
+    <div className="grid-container1">
       <Sidebar openSidebarToggle={sidebarOpen} OpenSidebar={toggleSidebar} />
       <Header OpenSidebar={toggleSidebar} />
       <Home />

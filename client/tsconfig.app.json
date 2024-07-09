@@ -21,7 +21,20 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    
   },
-  "include": ["src"]
+  "include": [
+    "store/store.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/store/reducers/productReducer.ts",
+    "./store/reducers/productReducer.ts",
+    "src/store/reducers/categoryReducer.ts",
+    "./store/reducers/categoryReducer.ts",
+    "src/store/reducers/userReducer.ts",
+    "./store/reducers/userReducer.ts",
+  ]
 }

@@ -1,0 +1,102 @@
+{
+  "users": [
+    {
+      "id": 80812854,
+      "name": "123",
+      "email": "123@gmail.com",
+      "status": false,
+      "password": "123",
+      "phone": "123",
+      "address": "123",
+      "created_at": "9/7/2024",
+      "updated_at": "9/7/2024"
+    },
+    {
+      "id": 9976771,
+      "name": "g",
+      "email": "g@gmail.com",
+      "status": true,
+      "password": "g",
+      "phone": "g",
+      "address": "g",
+      "created_at": "9/7/2024",
+      "updated_at": "9/7/2024"
+    },
+    {
+      "id": 461524409,
+      "name": "123",
+      "email": "123@gmail.com",
+      "password": "123",
+      "address": "12",
+      "status": false,
+      "phone": "",
+      "created_at": "9/7/2024",
+      "updated_at": "9/7/2024"
+    },
+    {
+      "name": "1234",
+      "email": "123@gmail.com",
+      "password": "123",
+      "address": "hà nội",
+      "id": 461524410
+    },
+    {
+      "name": "1234",
+      "email": "123@gmail.com",
+      "password": "123",
+      "address": "hà nội",
+      "id": 461524411
+    },
+    {
+      "name": "1234",
+      "email": "123@gmail.com",
+      "password": "123",
+      "address": "hà nội",
+      "id": 461524412
+    },
+    {
+      "name": "1234",
+      "email": "123@gmail.com",
+      "password": "123",
+      "address": "hà nội",
+      "id": 461524413
+    },
+    {
+      "id": 944936452,
+      "name": "1234",
+      "email": "1233@gmail.com",
+      "password": "123",
+      "address": "hà nội",
+      "status": false,
+      "phone": "",
+      "created_at": "9/7/2024",
+      "updated_at": "9/7/2024"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "áo realMarid",
+      "status": true,
+      "category": "Áo live",
+      "price": 10000000,
+      "date": "04/07/2024"
+    }
+  ],
+  "classify": [
+    {
+      "id": 26438103,
+      "name": "g",
+      "description": "g",
+      "status": true,
+      "products": []
+    },
+    {
+      "id": 90937503,
+      "name": "a",
+      "description": "a",
+      "status": true,
+      "products": []
+    }
+  ]
+}

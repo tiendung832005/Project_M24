@@ -2,6 +2,8 @@ import React, { FormEventHandler, useState } from 'react'
 import "../scss/loginAdmin.scss"
 import { useNavigate } from 'react-router-dom';
 export default function LoginAdmin() {
+  console.log("Username: admin1; pass: admin123");
+  
     const [username, setUsername] = useState('admin1');
   const [password, setPassword] = useState('admin123');
   const [error, setError] = useState('');

@@ -75,7 +75,7 @@ export default function Customer() {
 
   return (
     
-    <div className="container">
+    <div className="container1">
         <Sidebar openSidebarToggle={sidebarOpen} OpenSidebar={toggleSidebar} />
         <div className="customer-list">
         <button className="toggle-btn" onClick={toggleAddCustomerSection}>Ẩn/Hiện</button>

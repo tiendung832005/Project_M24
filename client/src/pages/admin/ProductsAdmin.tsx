@@ -21,13 +21,13 @@ export default function ProductsAdmin() {
   //   history.push('/add-product');
   // };
   return (
-  <div className='container'>
+  <div className='container1'>
       <Sidebar openSidebarToggle={sidebarOpen} OpenSidebar={toggleSidebar} />
     <div className="product-table">
       <div className="header">
         <h1>Products</h1>
         <button className="add-product" >
-          <NavLink className="add-product" to={'/AddProducts'}>+ Add Product</NavLink>
+          <NavLink className="add-product" to={'/addProducts'}>+ Add Product</NavLink>
           </button>
       </div>
       <div className="product-table-select">sắp xếp theo:
@@ -61,7 +61,7 @@ export default function ProductsAdmin() {
               <td>
                 <button className="view-btn">View</button>
                 <button className="edit-btn">
-                    <NavLink className="edit-btn" to={'/AddProducts'}>Edit</NavLink>
+                    <NavLink className="edit-btn" to={'/editProducts'}>Edit</NavLink>
                 </button>
                 <button className="delete-btn">Delete</button>
               </td>

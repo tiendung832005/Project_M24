@@ -9,6 +9,8 @@ import LoginAdmin from './pages/admin/LoginAdmin';
 import UserLogin from './pages/users/UserLogin';
 
 import AddProducts from './pages/admin/AddProducts';
+import EditProducts from './pages/admin/EditProducts';
+import UserRegister from './pages/users/UserRegister';
 export default function App() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
 
@@ -17,16 +19,19 @@ export default function App() {
   }
   return (
     <div>
-          <Routes>
-            <Route path="/loginAdmin" element={<LoginAdmin />}/>
-            <Route path='/Dashboard' element={<Dashboard/>}></Route>
-            <Route path='/Products' element={<ProductsAdmin/>}></Route>
-            <Route path='/AddProducts' element={<AddProducts/>}></Route>
-            <Route path='/Customer' element={<Customer/>}></Route>
-            <Route path='/Order' element={<Order/>}></Route>
-            <Route path='/Setting' element={<Setting/>}></Route>
-            <Route path='/userLogin' element={<UserLogin/>}></Route>
-          </Routes> 
+            <Routes>
+              <Route path="/loginAdmin" element={<LoginAdmin />}/>
+              <Route path='/dashboard' element={<Dashboard/>}></Route>
+              <Route path='/products' element={<ProductsAdmin/>}></Route>
+              <Route path='/addProducts' element={<AddProducts/>}></Route>
+              <Route path='/editProducts' element={<EditProducts/>}></Route>
+              <Route path='/customer' element={<Customer/>}></Route>
+              <Route path='/order' element={<Order/>}></Route>
+              <Route path='/setting' element={<Setting/>}></Route>
+              <Route path='/userLogin' element={<UserLogin/>}></Route>
+              <Route path='/userRegister' element={<UserRegister/>}></Route> 
+            </Routes> 
+            
           
           
     </div>

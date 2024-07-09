@@ -1,22 +1,22 @@
 import React, { useState } from 'react'
-import "../scss/addProducts.scss"
 import Sidebar from './Sidebar';
 import { NavLink } from 'react-router-dom';
-export default function AddProducts() {
 
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+export default function EditProducts() {
+    const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
+    const toggleSidebar = () => {
+      setSidebarOpen(!sidebarOpen);
+    };
   return (
-    <div className='container1'>
+    <div>
+        <div className='container1'>
       <Sidebar openSidebarToggle={sidebarOpen} OpenSidebar={toggleSidebar} />
     <div className="add-product-page">
             <button className="back-button">
           <NavLink className="back-button" to={'/products'}>Back</NavLink>
             </button>
-            <h1>Add Product</h1>
+            <h1>Edit Product</h1>
             <form className="add-product-form">
                 <div className="form-group">
                     <label>Product Name</label>
@@ -24,7 +24,7 @@ export default function AddProducts() {
                 </div>
                 <div className="form-group">
                     <label>Price</label>
-                    <input type="text" placeholder="Nhập gi" />
+                    <input type="text" placeholder="Nhập giá" />
                 </div>
                 <div className="form-group">
                     <label>Mã sản phẩm</label>
@@ -54,9 +54,10 @@ export default function AddProducts() {
                     <label>Description</label>
                     <textarea placeholder="Type here"></textarea>
                 </div>
-                <button type="submit" className="submit-button">Add Product</button>
+                <button type="submit" className="submit-button">Edit Product</button>
             </form>
         </div>
+    </div>
     </div>
   )
 }

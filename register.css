@@ -32,13 +32,13 @@
     opacity: 0;
     pointer-events: none;
 }
-header{
+.header1{
     font-size: 28px;
     font-weight: 600;
     color: #232836;
     text-align: center;
 }
-form{
+.form1{
     margin-top: 30px;
 }
 .form .field{

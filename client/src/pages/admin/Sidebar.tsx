@@ -20,27 +20,27 @@ export default function Sidebar({ openSidebarToggle, OpenSidebar }: SidebarProps
       </div>
       <ul className='sidebar-list' >
         <li className='sidebar-list-item'>
-          <NavLink to='/Dashboard'>
+          <NavLink to='/dashboard'>
             <BsGrid1X2Fill className='icon' /> Dashboard
           </NavLink>
         </li>
         <li className='sidebar-list-item'>
-          <NavLink to='/Products'>
+          <NavLink to='/products'>
             <BsFillArchiveFill className='icon' /> Products
           </NavLink>
         </li>
         <li className='sidebar-list-item'>
-          <NavLink to='/Order'>
+          <NavLink to='/order'>
             <BsFillGrid3X3GapFill className='icon' /> Order
           </NavLink>
         </li>
         <li className='sidebar-list-item'>
-          <NavLink to='/Customer'>
+          <NavLink to='/customer'>
             <BsPeopleFill className='icon' /> Customers
           </NavLink>
         </li>
         <li className='sidebar-list-item'>
-          <NavLink to='/Setting'>
+          <NavLink to='/setting'>
             <BsFillGearFill className='icon' /> Setting
           </NavLink>
         </li>
