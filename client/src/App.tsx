@@ -20,11 +20,11 @@ export default function App() {
   return (
     <div>
             <Routes>
-              <Route path="/loginAdmin" element={<LoginAdmin />}/>
+              <Route path="/" element={<LoginAdmin />}/>
               <Route path='/dashboard' element={<Dashboard/>}></Route>
               <Route path='/products' element={<ProductsAdmin/>}></Route>
               <Route path='/addProducts' element={<AddProducts/>}></Route>
-              <Route path='/editProducts' element={<EditProducts/>}></Route>
+              <Route path='/editProducts/:id' element={<EditProducts/>}></Route>
               <Route path='/customer' element={<Customer/>}></Route>
               <Route path='/order' element={<Order/>}></Route>
               <Route path='/setting' element={<Setting/>}></Route>

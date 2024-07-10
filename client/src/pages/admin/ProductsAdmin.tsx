@@ -1,84 +1,107 @@
-import React, { useState } from 'react'
-import  "../scss/adminProducts.scss"
+import React, { useState, useEffect } from 'react';
+import "../scss/adminProducts.scss";
 import Sidebar from './Sidebar';
 import { NavLink } from 'react-router-dom';
+import { Product } from "../../interfaces/productsAdmin";
+
 export default function ProductsAdmin() {
-        const products = [
-          { id: '39842-231', name: 'Macbook Pro 15"', status: 'Available', category: 'Laptops', price: '$ 2,999.00', date: '20 Jan, 2022' },
-          { id: '39842-231', name: 'Macbook Pro 13"', status: 'In Review', category: 'Laptops', price: '$ 2,999.00', date: '22 Feb, 2022' },
-          { id: '39842-231', name: 'iPhone 13 Mini', status: 'Sold Out', category: 'Phones', price: '$ 2,999.00', date: '22 Feb, 2022' },
-          { id: '39842-231', name: 'iPhone 14', status: 'Preorder', category: 'Phones', price: '$ 2,999.00', date: '22 Feb, 2022' },
-          { id: '39842-231', name: 'AirPods 2', status: 'Available', category: 'Electronics', price: '$ 2,999.00', date: '22 Feb, 2022' }
-        ];
-        const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [products, setProducts] = useState<Product[]>([]);
 
-        const toggleSidebar = () => {
-          setSidebarOpen(!sidebarOpen);
-        };
-  //       const history = unstable_HistoryRouter();
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
 
-  // const handleAddProduct = () => {
-  //   history.push('/add-product');
-  // };
+  const fetchProducts = () => {
+    fetch('http://localhost:8080/products')
+      .then(response => response.json())
+      .then(data => setProducts(data))
+      .catch(error => console.error('Error fetching products:', error));
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const handleDelete = (id: number) => {
+    fetch(`http://localhost:8080/products/${id}`, {
+      method: 'DELETE',
+    })
+      .then(response => {
+        if (response.ok) {
+          fetchProducts();
+        } else {
+          console.error('Error deleting product');
+        }
+      })
+      .catch(error => console.error('Error deleting product:', error));
+  };
+
   return (
-  <div className='container1'>
+    <div className='container1'>
       <Sidebar openSidebarToggle={sidebarOpen} OpenSidebar={toggleSidebar} />
-    <div className="product-table">
-      <div className="header">
-        <h1>Products</h1>
-        <button className="add-product" >
-          <NavLink className="add-product" to={'/addProducts'}>+ Add Product</NavLink>
+      <div className="product-table">
+        <div className="header">
+          <h1>Sản phẩm</h1>
+          <button className="add-product">
+            <NavLink className="add-product" to={'/addProducts'}>+ Thêm sản phẩm</NavLink>
           </button>
-      </div>
-      <div className="product-table-select">sắp xếp theo:
-                <select className="product-table-select-option" name="" id="">
-                    <option value="">Id</option>
-                    <option value="">Name</option>
-                    <option value="">Price</option>
-                </select>
-            </div>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Status</th>
-            <th>Category</th>
-            <th>Price</th>
-            <th>Date</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((product, index) => (
-            <tr key={index}>
-              <td>{product.id}</td>
-              <td>{product.name}</td>
-              <td>{product.status}</td>
-              <td>{product.category}</td>
-              <td>{product.price}</td>
-              <td>{product.date}</td>
-              <td>
-                <button className="view-btn">View</button>
-                <button className="edit-btn">
-                    <NavLink className="edit-btn" to={'/editProducts'}>Edit</NavLink>
-                </button>
-                <button className="delete-btn">Delete</button>
-              </td>
+        </div>
+        <div className="product-table-select">Sắp xếp theo:
+          <select className="product-table-select-option" name="" id="">
+            <option value="">ID</option>
+            <option value="">Tên</option>
+            <option value="">Giá</option>
+          </select>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Tên</th>
+              <th>Trạng thái</th>
+              <th>Danh mục</th>
+              <th>Giá</th>
+              <th>Ngày</th>
+              <th>Hành động</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-      <div className="pagination">
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <span>...</span>
-        <button>20</button>
+          </thead>
+          <tbody>
+            {Array.isArray(products) && products.length > 0 ? (
+              products.map((product, index) => (
+                <tr key={index}>
+                  <td>{product.id}</td>
+                  <td>{product.name}</td>
+                  <td>{product.status ? 'Còn hàng' : 'Hết hàng'}</td>
+                  <td>{product.category}</td>
+                  <td>{product.price}</td>
+                  <td>{product.date}</td>
+                  <td>
+                    <button className="view-btn">Xem</button>
+                    <button className="edit-btn">
+                      <NavLink className="edit-btn" to={`/editProducts/${product.id}`}>Chỉnh sửa</NavLink>
+                    </button>
+                    <button className="delete-btn" onClick={() => handleDelete(product.id)}>Xóa</button>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan={7}>Không có sản phẩm nào</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+        <div className="pagination">
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>5</button>
+          <span>...</span>
+          <button>20</button>
+        </div>
       </div>
     </div>
-  </div>
-  )
+  );
 }
