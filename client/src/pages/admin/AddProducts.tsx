@@ -8,9 +8,10 @@ export default function AddProducts() {
   const [product, setProduct] = useState({
     name: '',
     price: '',
-    status: 'available',
-    category: '', // Add category state
+    status: '',
+    category: '',
     description: '',
+    images: '', // Đổi từ 'image' thành 'images'
   });
   const navigate = useNavigate();
 
@@ -23,6 +24,17 @@ export default function AddProducts() {
     setProduct(prevProduct => ({ ...prevProduct, [name]: value }));
   };
 
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      // Xử lý file ảnh nếu cần thiết
+    }
+  };
+
+  const handleImageUrl = (imageUrl: string) => {
+    setProduct(prevProduct => ({ ...prevProduct, images: imageUrl })); // Sửa 'image' thành 'images'
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -33,7 +45,7 @@ export default function AddProducts() {
         },
         body: JSON.stringify({
           ...product,
-          date: new Date().toLocaleDateString(), // Add current date
+          date: new Date().toLocaleDateString(), // Thêm ngày hiện tại
         }),
       });
       if (response.ok) {
@@ -67,15 +79,15 @@ export default function AddProducts() {
             <label>Category</label>
             <select name="category" value={product.category} onChange={handleChange}>
               <option value="">Chọn danh mục</option>
-              <option value="electronics">Áo tuyển Quốc Gia</option>
-              <option value="clothing">Áo CLB</option>
-              <option value="books">Áo Retro</option>
-              
+              <option value="Áo Tuyển Quốc Gia">Áo tuyển Quốc Gia</option>
+              <option value="Áo CLB">Áo CLB</option>
+              <option value="Áo Retro">Áo Retro</option>
             </select>
           </div>
           <div className="form-group">
             <label>Status</label>
             <select name="status" value={product.status} onChange={handleChange}>
+              <option value="">Chọn trạng thái</option>
               <option value="available">Còn hàng</option>
               <option value="out_of_stock">Sắp hết hàng</option>
               <option value="preorder">Bán hết</option>
@@ -84,6 +96,14 @@ export default function AddProducts() {
           <div className="form-group">
             <label>Description</label>
             <textarea name="description" value={product.description} onChange={handleChange} placeholder="Type here"></textarea>
+          </div>
+          <div className="form-group">
+            <label>Image</label>
+            <input type="file" onChange={handleImageChange} />
+            <div className="image-preview">
+              {product.images && <img src={product.images} alt="Product" />}
+            </div>
+            <input type="text" value={product.images} onChange={(e) => handleImageUrl(e.target.value)} placeholder="Nhập link ảnh" />
           </div>
           <button type="submit" className="submit-button">Add Product</button>
         </form>

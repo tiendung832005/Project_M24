@@ -7,10 +7,11 @@ import Customer from './pages/admin/Customer';
 import Dashboard from './pages/admin/Dashboard';
 import LoginAdmin from './pages/admin/LoginAdmin';
 import UserLogin from './pages/users/UserLogin';
-
 import AddProducts from './pages/admin/AddProducts';
 import EditProducts from './pages/admin/EditProducts';
 import UserRegister from './pages/users/UserRegister';
+import UserHome from './pages/users/UserHome';
+
 export default function App() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
 
@@ -19,7 +20,7 @@ export default function App() {
   }
   return (
     <div>
-            <Routes>
+          <Routes>
               <Route path="/" element={<LoginAdmin />}/>
               <Route path='/dashboard' element={<Dashboard/>}></Route>
               <Route path='/products' element={<ProductsAdmin/>}></Route>
@@ -30,7 +31,8 @@ export default function App() {
               <Route path='/setting' element={<Setting/>}></Route>
               <Route path='/userLogin' element={<UserLogin/>}></Route>
               <Route path='/userRegister' element={<UserRegister/>}></Route> 
-            </Routes> 
+              <Route path='/Home' element={<UserHome/>}></Route>
+            </Routes>  
             
           
           

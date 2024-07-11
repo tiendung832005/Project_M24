@@ -17,29 +17,79 @@
   ],
   "products": [
     {
-      "id": 2,
-      "name": "Áo CLB MU 2024",
-      "status": true,
-      "category": "Áo CLB ",
-      "price": "350.000Đ",
-      "date": "04/07/2024"
-    },
-    {
-      "id": 3,
-      "name": "Áo tuyển Pháp full bộ",
-      "status": true,
-      "category": "Áo tuyển quốc gia ",
+      "id": 1,
+      "name": "Áo tuyển Ý home Euro 2024 bản full bộ",
+      "images": "https://product.hstatic.net/200000580329/product/vh_08657_b80bebe28dfa4cd4a83a39cb4007d7cb_master.jpg",
+      "status": "Còn hàng",
+      "category": "Áo tuyển Quốc Gia ",
       "price": "400.000Đ",
       "date": "04/07/2024"
     },
     {
-      "name": "Áo tuyển Bồ Đào Nha",
-      "price": "360.000Đ",
-      "status": "available",
-      "category": "electronics",
-      "description": "",
+      "id": 2,
+      "name": "Áo tuyển Pháp home Euro 2024 bản full bộ",
+      "images": "https://product.hstatic.net/200000580329/product/vh_08621_dbf8a6ed6cb74416b23d6a14d700fe70_master.jpg",
+      "status": "Còn hàng",
+      "category": "Áo tuyển Quốc Gia ",
+      "price": "400.000Đ",
+      "date": "04/07/2024"
+    },
+    {
+      "name": "Áo tuyển Đức home Euro 2024 bản full bộ",
+      "images": "https://product.hstatic.net/200000580329/product/vh_08648_07a7bcfec9194c9684a111cc01e34aa9_large.jpg",
+      "price": "400.000Đ",
+      "status": "Sắp hết hàng",
+      "category": "Áo tuyển Quốc Gia ",
+      "date": "10/7/2024",
+      "id": 3
+    },
+    {
+      "name": "Áo tuyển Bồ Đào Nha home Euro 2024 bản full bộ",
+      "images": "https://product.hstatic.net/200000580329/product/vh_08604_b2491065c1074a2c9453a388d85e8d9e_master.jpg",
+      "price": "400.000Đ",
+      "status": "Sắp hết hàng",
+      "category": "Áo tuyển Quốc Gia ",
       "date": "10/7/2024",
       "id": 4
+    },
+    {
+      "name": "Áo tuyển Argentina home Copa America 2024 bản full bộ",
+      "images": "https://product.hstatic.net/200000580329/product/vh_08588_2e89ba6a8d214cafbeff3f467c491e95_master.jpg",
+      "price": "400.000Đ",
+      "status": "Còn hàng",
+      "category": "Áo tuyển Quốc Gia ",
+      "date": "10/7/2024",
+      "id": 3
+    },
+    {
+      "name": "Áo Tuyển Anh home Euro full bộ",
+      "price": "400.000Đ",
+      "status": "available",
+      "category": "Áo Tuyển Quốc Gia",
+      "description": "",
+      "images": "https://product.hstatic.net/200000580329/product/vh_08538_cb59cc88ef6641198f4384c81ebceaec_master.jpg",
+      "date": "11/7/2024",
+      "id": 5
+    },
+    {
+      "name": "Áo Tuyển Tây Ban Nha home Euro full bộ",
+      "price": "400.000Đ",
+      "status": "available",
+      "category": "Áo Tuyển Quốc Gia",
+      "description": "",
+      "images": "https://product.hstatic.net/200000580329/product/vh_08522_5d1687784ed049bf970a36678d338b6c_master.jpg",
+      "date": "11/7/2024",
+      "id": 6
+    },
+    {
+      "name": "Áo Tuyển Đức away Euro full bộ",
+      "price": "400.000Đ",
+      "status": "available",
+      "category": "Áo Tuyển Quốc Gia",
+      "description": "",
+      "images": "https://product.hstatic.net/200000580329/product/vh_08568_e86005be854d40a497e9af7beec35c47_master.jpg",
+      "date": "11/7/2024",
+      "id": 7
     }
   ],
   "classify": [

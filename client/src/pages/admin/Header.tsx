@@ -19,7 +19,8 @@ export default function Header({ OpenSidebar }: HeaderProps): JSX.Element {
       <div className='header-right'>
         <BsFillBellFill className='icon' />
         <BsFillEnvelopeFill className='icon' />
-        <BsPersonCircle className='icon' />
+        <i><BsPersonCircle className='icon' /></i>
+        <p className='hello'>Xin chào Admin!</p>
       </div>
     </header>
   );

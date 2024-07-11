@@ -6,6 +6,7 @@
     "sidebar header header header"
     "sidebar main main main";
   height: 100vh;
+  
 }
 .product-table {
     margin: 10px;
@@ -19,9 +20,7 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 10px;
-      
-
-  
+      background-color: #ddd;
       h1 {
         margin: 0;
       }
