@@ -1,18 +1,28 @@
 {
   "users": [
     {
-      "name": "1234",
-      "email": "123@gmail.com",
+      "id": 806452292,
+      "name": "Nguyễn Văn Đức",
+      "email": "duc123@gmail.com",
       "password": "123",
-      "address": "hà nội",
-      "id": 461524410
+      "address": "hcm",
+      "status": false,
+      "phone": "",
+      "created_at": "12/7/2024",
+      "updated_at": "12/7/2024",
+      "banned": false
     },
     {
-      "name": "1234",
-      "email": "123@gmail.com",
+      "id": 91255137,
+      "name": "an",
+      "email": "an123@gmail.com",
       "password": "123",
-      "address": "hà nội",
-      "id": 461524413
+      "address": "đà nẵng",
+      "status": false,
+      "phone": "",
+      "created_at": "12/7/2024",
+      "updated_at": "12/7/2024",
+      "banned": false
     }
   ],
   "products": [
@@ -36,7 +46,7 @@
     },
     {
       "name": "Áo tuyển Đức home Euro 2024 bản full bộ",
-      "images": "https://product.hstatic.net/200000580329/product/vh_08648_07a7bcfec9194c9684a111cc01e34aa9_large.jpg",
+      "images": "https://product.hstatic.net/200000580329/product/vh_08641_df5d85fa05964cf8a3baebda12118a0c_master.jpg",
       "price": "400.000Đ",
       "status": "Sắp hết hàng",
       "category": "Áo tuyển Quốc Gia ",
@@ -59,7 +69,7 @@
       "status": "Còn hàng",
       "category": "Áo tuyển Quốc Gia ",
       "date": "10/7/2024",
-      "id": 3
+      "id": 7
     },
     {
       "name": "Áo Tuyển Anh home Euro full bộ",
@@ -81,15 +91,96 @@
       "date": "11/7/2024",
       "id": 6
     },
+    
     {
-      "name": "Áo Tuyển Đức away Euro full bộ",
+      "name": "Al nassr home 23-24 bản full bộ",
       "price": "400.000Đ",
       "status": "available",
-      "category": "Áo Tuyển Quốc Gia",
+      "category": "Áo CLB",
       "description": "",
-      "images": "https://product.hstatic.net/200000580329/product/vh_08568_e86005be854d40a497e9af7beec35c47_master.jpg",
+      "images": "https://product.hstatic.net/200000580329/product/skaa7602_747762ab747c477bb9fb9218a5a3ab35_master.jpg",
       "date": "11/7/2024",
-      "id": 7
+      "id": 8
+    },
+    {
+      "name": "MU home 23-24 bản full bộ",
+      "price": "400.000Đ",
+      "status": "available",
+      "category": "Áo CLB",
+      "description": "",
+      "images": "https://product.hstatic.net/200000580329/product/skaa2515_c1d5e05000d74dcbb3c8594d0d005490_master.jpg",
+      "date": "11/7/2024",
+      "id": 9
+    },
+    {
+      "name": "Chelsea home 23-24 bản full bộ",
+      "price": "400.000Đ",
+      "status": "available",
+      "category": "Áo CLB",
+      "description": "",
+      "images": "https://product.hstatic.net/200000580329/product/skaa7236_67b5c0916fa94ec8b8e3547aa7630208_master.jpg",
+      "date": "11/7/2024",
+      "id": 10
+    },
+    {
+      "name": "Tottenham home 23-24 bản player full bộ",
+      "price": "400.000Đ",
+      "status": "available",
+      "category": "Áo CLB",
+      "description": "",
+      "images": "https://product.hstatic.net/200000580329/product/skaa7583_54afa3df84a843e79b642980962f82f4_master.jpg",
+      "date": "11/7/2024",
+      "id": 11
+    },
+    {
+      "name": "Arsenal home 23-24 bản full bộ",
+      "price": "400.000Đ",
+      "status": "out_of_stock",
+      "category": "Áo CLB",
+      "description": "",
+      "images": "https://product.hstatic.net/200000580329/product/skaa4671_f7f9f291661a43ffa951b7927d735944_master.jpg",
+      "date": "12/7/2024",
+      "id": 12
+    },
+    {
+      "name": "Áo MU Retro 07-08 home",
+      "price": "400.000Đ",
+      "status": "out_of_stock",
+      "category": "Áo Retro",
+      "description": "",
+      "images": "https://product.hstatic.net/200000580329/product/nmd13055_0545daff61b14597b58dd1d86bf068cb_master.jpg",
+      "date": "12/7/2024",
+      "id": 13
+    },
+    {
+      "name": "Áo AC Milan Retro 06-07 home",
+      "price": "400.000Đ",
+      "status": "out_of_stock",
+      "category": "Áo Retro",
+      "description": "",
+      "images": "https://product.hstatic.net/200000580329/product/nmd12996_9fe04d840c9f43dfa02c0291e6375d17_master.jpg",
+      "date": "12/7/2024",
+      "id": 14
+    },
+    {
+      "name": "Áo Tuyển Anh 1998",
+      "price": "400.000Đ",
+      "status": "out_of_stock",
+      "category": "Áo Retro",
+      "description": "",
+      "images": "https://product.hstatic.net/200000580329/product/skaa3868_b136509abfe94e508ee7c44b1d896a2f_master.jpg",
+      "date": "12/7/2024",
+      "id": 15
+    },
+    {
+      "name": "Áo Real Retro 09-10 home",
+      "price": "400.000Đ",
+      "status": "out_of_stock",
+      "category": "Áo Retro",
+      "description": "",
+      "images": "https://product.hstatic.net/200000580329/product/nmd13037_f38033955747460eb1e21a7b2a703a0c_master.jpg",
+      "date": "12/7/2024",
+      "id": 16
     }
   ],
   "classify": [

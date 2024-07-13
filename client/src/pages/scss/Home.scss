@@ -113,11 +113,13 @@
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 1rem;
         margin-top: 2rem;
-      
+        
         .box {
           padding: 10px;
           border-radius: 1rem;
           box-shadow: 1px 4px 41px rgba(0, 0, 0, 0.1);
+          text-decoration: none;
+          color: #000000;
             &:hover{
                 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
                 cursor: pointer;

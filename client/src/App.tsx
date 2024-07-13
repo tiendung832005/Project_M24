@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ProductsAdmin from './pages/admin/ProductsAdmin';
 import Order from './pages/admin/Order';
@@ -11,31 +11,30 @@ import AddProducts from './pages/admin/AddProducts';
 import EditProducts from './pages/admin/EditProducts';
 import UserRegister from './pages/users/UserRegister';
 import UserHome from './pages/users/UserHome';
+import ProductDetail from './pages/users/ProductDetail';
 
 export default function App() {
-  const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
+  const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
 
   const OpenSidebar = () => {
-    setOpenSidebarToggle(!openSidebarToggle)
-  }
+    setOpenSidebarToggle(!openSidebarToggle);
+  };
+
   return (
-    <div>
-          <Routes>
-              <Route path="/" element={<LoginAdmin />}/>
-              <Route path='/dashboard' element={<Dashboard/>}></Route>
-              <Route path='/products' element={<ProductsAdmin/>}></Route>
-              <Route path='/addProducts' element={<AddProducts/>}></Route>
-              <Route path='/editProducts/:id' element={<EditProducts/>}></Route>
-              <Route path='/customer' element={<Customer/>}></Route>
-              <Route path='/order' element={<Order/>}></Route>
-              <Route path='/setting' element={<Setting/>}></Route>
-              <Route path='/userLogin' element={<UserLogin/>}></Route>
-              <Route path='/userRegister' element={<UserRegister/>}></Route> 
-              <Route path='/Home' element={<UserHome/>}></Route>
-            </Routes>  
-            
-          
-          
-    </div>
-  )
+    
+      <Routes>
+        <Route path="/" element={<LoginAdmin />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/products" element={<ProductsAdmin />} />
+        <Route path="/addProducts" element={<AddProducts />} />
+        <Route path="/editProducts/:id" element={<EditProducts />} />
+        <Route path="/customer" element={<Customer />} />
+        <Route path="/order" element={<Order />} />
+        <Route path="/setting" element={<Setting />} />
+        <Route path="/userLogin" element={<UserLogin />} />
+        <Route path="/userRegister" element={<UserRegister />} />
+        <Route path="/home" element={<UserHome />} />
+        <Route path="/card/:productId" element={<ProductDetail />} />
+      </Routes>
+  );
 }

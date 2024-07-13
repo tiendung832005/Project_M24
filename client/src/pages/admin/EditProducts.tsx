@@ -12,7 +12,6 @@ export default function EditProducts() {
     description: '',
     category: '',
     images: '',
-
   });
   const { id } = useParams<{ id: string }>(); // Lấy id từ URL
   const navigate = useNavigate();
@@ -20,6 +19,7 @@ export default function EditProducts() {
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
+
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -37,13 +37,13 @@ export default function EditProducts() {
       .then(response => response.json())
       .then(data => setProduct(data))
       .catch(error => console.error('Lỗi khi tìm nạp sản phẩm:', error));
-  }, [id]); 
+  }, [id]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setProduct(prevProduct => ({ ...prevProduct, [name]: value }));
   };
-  
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     fetch(`http://localhost:8080/products/${id}`, {
@@ -82,37 +82,37 @@ export default function EditProducts() {
               <input type="text" name="price" value={product.price} onChange={handleChange} placeholder="Nhập giá" />
             </div>
             <div className="form-group">
-            <label>Category</label>
-            <select name="category" value={product.category} onChange={handleChange}>
-              <option value="">Chọn danh mục</option>
-              <option value="Áo Tuyển Quốc Gia">Áo tuyển Quốc Gia</option>
-              <option value="Áo CLB">Áo CLB</option>
-              <option value="Áo Retro">Áo Retro</option>
-            </select>
-          </div>
-          <div className="form-group">
-            <label>Status</label>
-            <select name="status" value={product.status} onChange={handleChange}>
-            <option value="">Chọn trạng thái</option>
-              <option value="available">Còn hàng</option>
-              <option value="out_of_stock">Sắp hết hàng</option>
-              <option value="preorder">Bán hết</option>
-            </select>
-          </div>
+              <label>Category</label>
+              <select name="category" value={product.category} onChange={handleChange}>
+                <option value="">Chọn danh mục</option>
+                <option value="Áo Tuyển Quốc Gia">Áo tuyển Quốc Gia</option>
+                <option value="Áo CLB">Áo CLB</option>
+                <option value="Áo Retro">Áo Retro</option>
+              </select>
+            </div>
+            <div className="form-group">
+              <label>Status</label>
+              <select name="status" value={product.status} onChange={handleChange}>
+                <option value="">Chọn trạng thái</option>
+                <option value="available">Còn hàng</option>
+                <option value="out_of_stock">Sắp hết hàng</option>
+                <option value="preorder">Bán hết</option>
+              </select>
+            </div>
             <div className="form-group">
               <label>Description</label>
               <textarea name="description" value={product.description} onChange={handleChange} placeholder="Type here"></textarea>
             </div>
             <div className="form-group">
-            <label>Image</label>
-            <input type="file" onChange={handleImageChange} />
-            <div className="image-preview">
-              {product.images && <img src={product.images} alt="Product" />}
+              <label>Image</label>
+              <input type="file" onChange={handleImageChange} />
+              <div className="image-preview">
+                {product.images && <img src={product.images} alt="Product" />}
+              </div>
+              <div>
+                <input type="text" value={product.images} onChange={(e) => handleImageUrl(e.target.value)} placeholder="Nhập link ảnh" />
+              </div>
             </div>
-            <div>
-              <input type="text" value={product.images} onChange={(e) => handleImageUrl(e.target.value)} placeholder="Nhập link ảnh" />
-            </div>
-          </div>
             <button type="submit" className="submit-button">Edit Product</button>
           </form>
         </div>

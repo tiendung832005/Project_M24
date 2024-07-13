@@ -7,6 +7,8 @@ import { Product } from "../../interfaces/productsAdmin";
 export default function ProductsAdmin() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [products, setProducts] = useState<Product[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8;
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
@@ -36,6 +38,12 @@ export default function ProductsAdmin() {
       })
       .catch(error => console.error('Error deleting product:', error));
   };
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
+
+  const paginate = (pageNumber: any) => setCurrentPage(pageNumber);
 
   return (
     <div className='container1'>
@@ -67,8 +75,8 @@ export default function ProductsAdmin() {
             </tr>
           </thead>
           <tbody>
-            {Array.isArray(products) && products.length > 0 ? (
-              products.map((product, index) => (
+            {Array.isArray(currentItems) && currentItems.length > 0 ? (
+              currentItems.map((product, index) => (
                 <tr key={index}>
                   <td>{product.id}</td>
                   <td>{product.name}</td>
@@ -93,13 +101,11 @@ export default function ProductsAdmin() {
           </tbody>
         </table>
         <div className="pagination">
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>4</button>
-          <button>5</button>
-          <span>...</span>
-          <button>20</button>
+          {Array.from({ length: Math.ceil(products.length / itemsPerPage) }, (_, index) => (
+            <button key={index + 1} onClick={() => paginate(index + 1)}>
+              {index + 1}
+            </button>
+          ))}
         </div>
       </div>
     </div>

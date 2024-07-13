@@ -34,7 +34,7 @@ export default function UserLogin() {
           alert("Email hoặc mật khẩu không đúng");
       } else {
           localStorage.setItem("userLogin", JSON.stringify(findUser));
-          window.location.href = "index.html";
+          window.location.href = "http://localhost:5173/home";
       }
   };
   return (
