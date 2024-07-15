@@ -36,7 +36,8 @@
         "src/**/*.jsx",
         "src/store/reducers/productReducer.ts",
         "src/store/reducers/categoryReducer.ts",
-        "src/store/reducers/userReducer.ts"
+        "src/store/reducers/userReducer.ts",
+        "src/store/reducers/orderReducer.ts"
       ]
     }
   ]

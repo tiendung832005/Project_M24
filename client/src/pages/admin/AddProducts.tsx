@@ -88,9 +88,9 @@ export default function AddProducts() {
             <label>Status</label>
             <select name="status" value={product.status} onChange={handleChange}>
               <option value="">Chọn trạng thái</option>
-              <option value="available">Còn hàng</option>
-              <option value="out_of_stock">Sắp hết hàng</option>
-              <option value="preorder">Bán hết</option>
+              <option value="Còn hàng">Còn hàng</option>
+              <option value="Sắp hết hàng">Sắp hết hàng</option>
+              <option value="Bán hết">Bán hết</option>
             </select>
           </div>
           <div className="form-group">

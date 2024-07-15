@@ -71,9 +71,9 @@ export default function UserHome() {
             </i>
             {showDropdown && (
               <div className="dropdown">
-                <a href="#">Áo tuyển Quốc Gia</a>
-                <a href="#">Áo CLB</a>
-                <a href="#">Áo Retro</a>
+                <a href="#country">Áo tuyển Quốc Gia</a>
+                <a href="#club">Áo CLB</a>
+                <a href="#retro">Áo Retro</a>
               </div>
             )}
           </a>
@@ -161,7 +161,7 @@ export default function UserHome() {
         </button>
       </div>
 
-      <section className="services" id="services">
+      <section className="services" id="country">
         <div className="heading">
           <h2>Áo bóng đá bản tuyển Quốc Gia</h2>
         </div>
@@ -186,7 +186,7 @@ export default function UserHome() {
         </div>
       </section>
 
-      <section className="services" id="services">
+      <section className="services" id="club">
         <div className="heading">
           <h2>Áo bóng đá bản CLB</h2>
         </div>
@@ -211,7 +211,7 @@ export default function UserHome() {
         </div>
       </section>
 
-      <section className="services" id="services">
+      <section className="services" id="retro">
         <div className="heading">
           <h2>Áo bóng đá bản Retro</h2>
         </div>

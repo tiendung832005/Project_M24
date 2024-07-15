@@ -36,5 +36,7 @@
     "./store/reducers/categoryReducer.ts",
     "src/store/reducers/userReducer.ts",
     "./store/reducers/userReducer.ts",
+    "src/store/reducers/orderReducer.ts",
+    "./store/reducers/orderReducer.ts",
   ]
 }

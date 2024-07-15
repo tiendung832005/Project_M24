@@ -3,14 +3,16 @@ import { FaTrash } from 'react-icons/fa';
 import { useCart } from './CartContext';
 
 const Cart: React.FC = () => {
-    const { cartItems, addToCart } = useCart();
+    const { cartItems, removeFromCart, updateQuantity } = useCart();
 
     const handleRemove = (id: number) => {
-        // Implement remove item from cart logic
+        removeFromCart(id);
     };
 
     const handleQuantityChange = (id: number, quantity: number) => {
-        // Implement quantity change logic
+        if (quantity > 0) {
+            updateQuantity(id, quantity);
+        }
     };
 
     const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);

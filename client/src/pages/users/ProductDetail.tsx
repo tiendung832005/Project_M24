@@ -25,13 +25,10 @@ type Product = {
 export default function ProductDetail() {
   const { productId } = useParams<{ productId: string }>();
   const [showDropdown, setShowDropdown] = useState(false);
-  const { addToCart } = useCart();
-  const { getTotalItems } = useCart();
+  const { addToCart, getTotalItems } = useCart();
   const [product, setProduct] = useState<Product | null>(null);
 
   useEffect(() => {
-    console.log("productId:", productId);
-
     if (!productId) {
       console.error("No productId found in URL");
       return;
@@ -60,6 +57,7 @@ export default function ProductDetail() {
   }
 
   const productWithQuantity = { ...product, quantity: 1 };
+  
 
   return (
     <div>
@@ -108,53 +106,57 @@ export default function ProductDetail() {
         </div>
       </div>
       <div className="flex flex-wrap gap-8 p-12">
-  <div className="w-96 xl:w-3/6">
-    <img src={product.images} alt={product.name} className="w-full border rounded-lg border-gray-300" />
-  </div>
-  <div className="flex-1 min-w-0">
-    <h1 className="text-2xl font-bold mb-4">{product.name}</h1>
-    <span className="text-red-600 text-xl mb-4">
-      {product.price.toLocaleString("vi-VN")}₫
-    </span>
-    <div className="mb-4">
-      <span className="text-orange-500 font-bold">{product.status}</span>
-    </div>
+        <div className="w-96 xl:w-3/6">
+          <img
+            src={product.images}
+            alt={product.name}
+            className="w-full border rounded-lg border-gray-300"
+          />
+        </div>
+        <div className="flex-1 min-w-0">
+          <h1 className="text-2xl font-bold mb-4">{product.name}</h1>
+          <span className="text-red-600 text-xl mb-4">
+            {product.price.toLocaleString("vi-VN")}₫
+          </span>
+          <div className="mb-4">
+            <span className="text-orange-500 font-bold">{product.status}</span>
+          </div>
 
-    <button
-      className="bg-red-500 text-white px-4 py-2 rounded-md cursor-not-allowed mb-8"
-      disabled={product.status !== "Còn hàng"}
-      onClick={() => addToCart(productWithQuantity)}
-    >
-      Thêm vào giỏ
-    </button>
-    <div className="mb-8">
-      <a href="https://m.me/yourpage" className="flex items-center text-blue-500">
-        <FaFacebookMessenger className="mr-2" /> Nhắn tin tư vấn ngay
-      </a>
-      <p className="mt-2">
-        In áo: Mua hàng kèm in áo liên hệ ngay qua messenger của shop trên web
-        hoặc qua fanpage Facebook
-      </p>
-      <p className="mt-2">
-        <FaTruck className="mr-2" /> Giao hàng dự kiến: Thứ 2 - Thứ 6 từ 9h00 - 17h00
-      </p>
-      <p className="mt-2">
-        <FaPhoneAlt className="mr-2" /> Hỗ trợ, tư vấn ngay qua messenger FB hoặc qua sdt
-        0985842468
-      </p>
-    </div>
-    <div className="mt-8">
-      <h2 className="text-xl font-bold mb-4">THÔNG TIN SẢN PHẨM</h2>
-      <img
-        src="https://file.hstatic.net/200000580329/file/bang_sz_284e0ac587cd4464b8277527545ae682_grande.png"
-        alt=""
-        className="mb-4"
-      />
-      <p>{product.description}</p>
-    </div>
-  </div>
-</div>
-
+          <button
+            className="bg-red-500 text-white px-4 py-2 rounded-md cursor-pointer mb-8"
+            disabled={product.status == "Hết hàng"}
+            onClick={() => addToCart(productWithQuantity)}
+          >
+            Thêm vào giỏ
+          </button>
+          <div className="mb-8">
+            <a href="https://m.me/yourpage" className="flex items-center text-blue-500">
+              <FaFacebookMessenger className="mr-2" /> Nhắn tin tư vấn ngay
+            </a>
+            <p className="mt-2">
+              In áo: Mua hàng kèm in áo liên hệ ngay qua messenger của shop trên
+              web hoặc qua fanpage Facebook
+            </p>
+            <p className="mt-2">
+              <FaTruck className="mr-2" /> Giao hàng dự kiến: Thứ 2 - Thứ 6 từ
+              9h00 - 17h00
+            </p>
+            <p className="mt-2">
+              <FaPhoneAlt className="mr-2" /> Hỗ trợ, tư vấn ngay qua messenger
+              FB hoặc qua sdt 0985842468
+            </p>
+          </div>
+          <div className="mt-8">
+            <h2 className="text-xl font-bold mb-4">THÔNG TIN SẢN PHẨM</h2>
+            <img
+              src="https://file.hstatic.net/200000580329/file/bang_sz_284e0ac587cd4464b8277527545ae682_grande.png"
+              alt=""
+              className="mb-4"
+            />
+            <p>{product.description}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

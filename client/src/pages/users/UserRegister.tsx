@@ -61,6 +61,7 @@ export default function UserRegister() {
         address: addressRef.current?.value,
         status: false,
         phone: '',
+        cart: [],
         created_at: new Date().toLocaleDateString(),
         updated_at: new Date().toLocaleDateString(),
       };
