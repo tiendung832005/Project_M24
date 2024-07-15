@@ -23,7 +23,9 @@
       gap: 20px;
   
       .icon-down {
+        margin-top: 10px;
         font-size: 16px;
+        margin-left: 10px;
       }
   
       a {
@@ -31,6 +33,7 @@
         color: #777;
         font-size: 23px;
         position: relative;
+        display: flex;
   
         &:hover {
           color: #32cd32;
@@ -68,6 +71,8 @@
       span {
         font-size: 22px;
         color: #000;
+        display: flex;
+        gap: 10px;
       }
   
       .cart {

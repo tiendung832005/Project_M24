@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "../scss/userLogin.scss";
+
 import { FaFacebook, FaGoogle } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
@@ -38,52 +38,64 @@ export default function UserLogin() {
       }
   };
   return (
-    <div>
-            <section className="user-login-container forms-container">
-                <div className="form login-form">
-                    <div className="form-content">
-                        <header>Đăng nhập</header>
-                        <form action="#" id="formLogin" onSubmit={handleLogin}>
-                            <div className="field input-field">
-                                <input type="email" placeholder="Email" className="input" id="email" />
-                            </div>
-
-                            <div className="field input-field">
-                                <input type="password" placeholder="Password" className="password-input" id="password" />
-                                <i className="bx bx-hide eye-icon"></i>
-                            </div>
-
-                            <div className="form-link">
-                                <a href="#" className="forgot-pass">Quên mật khẩu?</a>
-                            </div>
-
-                            <div className="field button-field">
-                                <button type="submit">Đăng nhập</button>
-                            </div>
-                        </form>
-
-                        <div className="form-link">
-                            <span>Chưa có tài khoản? <NavLink to={'/userRegister'}> Đăng ký</NavLink></span>
-                        </div>
-                    </div>
-
-                    <div className="line-divider"></div>
-
-                    <div className="media-options">
-                        <a href="#" className="field facebook">
-                            <i><FaFacebook /></i>
-                            <span>Login with Facebook</span>
-                        </a>
-                    </div>
-
-                    <div className="media-options">
-                        <a href="#" className="field google">
-                            <i><FaGoogle /></i>
-                            <span>Login with Google</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
+    <div className="flex items-center justify-center min-h-screen bg-[#1d2634]">
+  <section className="max-w-lg w-full p-8 rounded-lg bg-gray-700">
+    <div className="form-content">
+      <header className="text-2xl font-semibold text-gray-100 text-center mb-6">Đăng nhập</header>
+      <form action="#" id="formLogin" onSubmit={handleLogin}>
+        <div className="mb-4">
+          <input
+            type="email"
+            placeholder="Email"
+            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            id="email"
+          />
         </div>
+
+        <div className="mb-4 relative">
+          <input
+            type="password"
+            placeholder="Password"
+            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            id="password"
+          />
+          <i className="absolute top-1/2 right-3 transform -translate-y-1/2 text-white cursor-pointer"></i>
+        </div>
+
+        <div className="text-center mb-4">
+          <a href="#" className="text-blue-400 hover:underline">Quên mật khẩu?</a>
+        </div>
+
+        <div className="mb-6">
+          <button type="submit" className="w-full py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Đăng nhập</button>
+        </div>
+      </form>
+
+      <div className="text-center mb-4">
+        <span className="text-gray-100">
+          Chưa có tài khoản?
+          <NavLink to={'/userRegister'} className="text-blue-400 hover:underline"> Đăng ký</NavLink>
+        </span>
+      </div>
+    </div>
+
+    <div className="relative h-1 bg-gray-400 mb-6">
+      <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-700 text-gray-300 px-3">Or</span>
+    </div>
+
+    <div className="flex flex-col gap-4">
+      <a href="#" className="flex items-center justify-center gap-4 bg-blue-600 text-white py-2 rounded">
+        <FaFacebook className="text-2xl" />
+        <span>Login with Facebook</span>
+      </a>
+
+      <a href="#" className="flex items-center justify-center gap-4 border border-gray-300 bg-white py-2 rounded">
+        <FaGoogle className="text-2xl text-red-500" />
+        <span className="text-gray-700">Login with Google</span>
+      </a>
+    </div>
+  </section>
+</div>
+
   );
 }

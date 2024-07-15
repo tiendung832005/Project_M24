@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../scss/Home.scss";
+import { useCart } from './CartContext';
 import {
   FaChevronDown,
   FaPhoneAlt,
@@ -28,6 +29,7 @@ type Product = {
 export default function UserHome() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [products, setProducts] = useState<Product[]>([]);
+  const { getTotalItems } = useCart();
 
   useEffect(() => {
     axios
@@ -57,7 +59,7 @@ export default function UserHome() {
           <img src={logo} alt="Logo" />
         </div>
         <div className="nav">
-          <a href="#">Trang chủ</a>
+          <a href="http://localhost:5173/home">Trang chủ</a>
           <a
             href="#"
             onMouseEnter={() => setShowDropdown(true)}
@@ -89,11 +91,9 @@ export default function UserHome() {
             0985842468
           </span>
           <div className="cart">
-            <i className="cart-icon">
-              <FaShoppingCart />
-            </i>
-            <div className="cart-count">0</div>
-          </div>
+                        <a href="http://localhost:5173/cart" className="cart-icon"><FaShoppingCart /></a>
+                        <div className="cart-count">{getTotalItems()}</div>
+                    </div>
         </div>
       </div>
 

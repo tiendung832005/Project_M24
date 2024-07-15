@@ -12,6 +12,9 @@ import EditProducts from './pages/admin/EditProducts';
 import UserRegister from './pages/users/UserRegister';
 import UserHome from './pages/users/UserHome';
 import ProductDetail from './pages/users/ProductDetail';
+import Cart from './pages/users/Cart';
+import { CartProvider } from './pages/users/CartContext';
+
 
 export default function App() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
@@ -21,7 +24,7 @@ export default function App() {
   };
 
   return (
-    
+    <CartProvider>
       <Routes>
         <Route path="/" element={<LoginAdmin />} />
         <Route path="/dashboard" element={<Dashboard />} />
@@ -35,6 +38,9 @@ export default function App() {
         <Route path="/userRegister" element={<UserRegister />} />
         <Route path="/home" element={<UserHome />} />
         <Route path="/card/:productId" element={<ProductDetail />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
+    </CartProvider>
+    
   );
 }

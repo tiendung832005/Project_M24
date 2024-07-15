@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import "../scss/UserRegister.scss";
+
 import { FaFacebook, FaGoogle } from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
 
@@ -103,100 +103,99 @@ export default function UserRegister() {
   };
 
   return (
-    <div>
-      <section className="container forms">
-        <div className="form signup">
-          <div className="form-content">
-            <header>Đăng kí</header>
-            <form id="formRegister" ref={formRegisterRef} onSubmit={handleSubmit}>
-              <div className="field input-field">
-                <input
-                  type="text"
-                  placeholder="Họ và tên"
-                  className="input"
-                  ref={userNameRef}
-                />
-                {userNameError && (
-                  <div style={{ color: 'red' }}>{userNameError}</div>
-                )}
-              </div>
-
-              <div className="field input-field">
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="input"
-                  ref={emailRef}
-                />
-                {userEmailError && (
-                  <div style={{ color: 'red' }}>{userEmailError}</div>
-                )}
-              </div>
-
-              <div className="field input-field">
-                <input
-                  type="password"
-                  placeholder="Nhập mật khẩu"
-                  ref={passwordRef}
-                  className="password"
-                />
-                {passwordError && (
-                  <div style={{ color: 'red' }}>{passwordError}</div>
-                )}
-              </div>
-
-              <div className="field input-field">
-                <input
-                  type="password"
-                  placeholder="Nhập lại mật khẩu"
-                  className="password"
-                  ref={rePasswordRef}
-                />
-                {rePasswordError && (
-                  <div style={{ color: 'red' }}>{rePasswordError}</div>
-                )}
-                <i className="bx bx-hide eye-icon" onClick={togglePasswordVisibility}></i>
-              </div>
-
-              <div className="field input-field">
-                <input
-                  type="text"
-                  placeholder="Địa chỉ"
-                  className="input"
-                  ref={addressRef}
-                />
-              </div>
-
-              <div className="field button-field">
-                <button type="submit">Đăng kí</button>
-              </div>
-            </form>
-
-            <div className="form-link">
-              <span>
-                Đã có tài khoản?
-                <NavLink to={'/userLogin'}> Đăng nhập</NavLink>
-              </span>
-            </div>
-          </div>
-
-          <div className="line"></div>
-
-          <div className="media-options">
-            <a href="#" className="field facebook">
-              <i><FaFacebook /></i>
-              <span>Login with Facebook</span>
-            </a>
-          </div>
-
-          <div className="media-options">
-            <a href="#" className="field google">
-              <i><FaGoogle /></i>
-              <span>Login with Google</span>
-            </a>
-          </div>
+    <div className="flex items-center justify-center min-h-screen bg-[#1d2634]">
+  <section className="max-w-lg w-full p-8 rounded-lg bg-gray-700">
+    <div className="form-content">
+      <header className="text-2xl font-semibold text-gray-100 text-center mb-6">Đăng kí</header>
+      <form id="formRegister" ref={formRegisterRef} onSubmit={handleSubmit}>
+        <div className="mb-4">
+          <input
+            type="text"
+            placeholder="Họ và tên"
+            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            ref={userNameRef}
+          />
+          {userNameError && (
+            <div className="text-red-500">{userNameError}</div>
+          )}
         </div>
-      </section>
+
+        <div className="mb-4">
+          <input
+            type="email"
+            placeholder="Email"
+            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            ref={emailRef}
+          />
+          {userEmailError && (
+            <div className="text-red-500">{userEmailError}</div>
+          )}
+        </div>
+
+        <div className="mb-4">
+          <input
+            type="password"
+            placeholder="Nhập mật khẩu"
+            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            ref={passwordRef}
+          />
+          {passwordError && (
+            <div className="text-red-500">{passwordError}</div>
+          )}
+        </div>
+
+        <div className="mb-4 relative">
+          <input
+            type="password"
+            placeholder="Nhập lại mật khẩu"
+            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            ref={rePasswordRef}
+          />
+          {rePasswordError && (
+            <div className="text-red-500">{rePasswordError}</div>
+          )}
+          <i className="absolute top-1/2 right-3 transform -translate-y-1/2 text-white cursor-pointer" onClick={togglePasswordVisibility}></i>
+        </div>
+
+        <div className="mb-4">
+          <input
+            type="text"
+            placeholder="Địa chỉ"
+            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            ref={addressRef}
+          />
+        </div>
+
+        <div className="mb-6">
+          <button type="submit" className="w-full py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Đăng kí</button>
+        </div>
+      </form>
+
+      <div className="text-center mb-4">
+        <span className="text-gray-100">
+          Đã có tài khoản?
+          <NavLink to={'/userLogin'} className="text-blue-400 hover:underline"> Đăng nhập</NavLink>
+        </span>
+      </div>
     </div>
+
+    <div className="relative h-1 bg-gray-400 mb-6">
+      <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-700 text-gray-300 px-3">Or</span>
+    </div>
+
+    <div className="flex flex-col gap-4">
+      <a href="#" className="flex items-center justify-center gap-4 bg-blue-600 text-white py-2 rounded">
+        <FaFacebook className="text-2xl" />
+        <span>Login with Facebook</span>
+      </a>
+
+      <a href="#" className="flex items-center justify-center gap-4 border border-gray-300 bg-white py-2 rounded">
+        <FaGoogle className="text-2xl text-red-500" />
+        <span className="text-gray-700">Login with Google</span>
+      </a>
+    </div>
+  </section>
+</div>
+
   );
 }
